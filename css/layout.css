@@ -1,0 +1,803 @@
+@charset "utf-8";
+
+/*layout*/
+body {
+    font-family: 'NanumSquare', sans-serif !important;
+    font-size: 14px;
+    color: #4e4e4e;
+    line-height: 1.4;
+}
+
+.wrap {
+    width: 100%;
+    min-width: 1100px;
+}
+
+/*header*/
+header {
+    width: 100%;
+    height: 120px;
+    line-height: 120px;
+    padding: 0 60px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background: transparent;
+}
+
+header.on {
+    background-color: #fff;
+}
+
+header .logo {
+    display: block;
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: -6px;
+    color: #001141;
+    float: left;
+}
+header nav {
+    float: right;
+}
+
+header nav .gnb li {
+    display: inline-block;
+    margin-left: 60px;
+}
+
+header nav .gnb li a {
+    display: block;
+    font-size: 18px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+header nav .gnb li a:after {
+    content: '';
+    width: 0%;
+    height: 1px;
+    position: absolute;
+    background: #888;
+    bottom: 47px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s;
+}
+
+header nav .gnb li a:hover:after,
+header nav .gnb li a:focus:after {
+    width: 100%;
+}
+
+/*visual*/
+section.visual {
+    margin-top: 120px;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+section.visual:before {
+    content: '';
+    width: 53%;
+    height: 400px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #f0f0f0;
+}
+
+section.visual .img {
+    width: 94%;
+    text-align: center;
+    position: relative;
+}
+
+section.visual .img .imgBox {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/*  페이지 숫자 이미지 */
+section.visual .img .page {
+    position: absolute;
+    right: -43px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+section.visual .img img {
+    width: 100%;
+}
+
+section.visual .title {
+    position: absolute;
+    top: 40%;
+    left: 8%;
+    color: #fff;
+}
+
+section.visual .title h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+section.visual .title p {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+section.visual .title h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+section.visual .menu {
+    position: absolute;
+    bottom: 15%;
+    left: 8%;
+}
+
+section.visual .menu li {
+    float: left;
+    margin-right: 60px;
+}
+
+section.visual .menu li a {
+    display: block;
+    color: #fff;
+}
+
+section.visual .menu li a p {
+    float: left;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+section.visual .menu li a p span {
+    display: block;
+    font-weight: 100;
+    font-size: 15px;
+    color: #aaa;
+}
+
+section.visual .menu li a .arrow {
+    display: block;
+    float: right;
+    margin-top: 10px;
+    margin-left: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+section.visual .menu li a .arrow:before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background: rgba(252, 252, 252, 0.4);
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    z-index: -1;
+    transition: all 0.2s;
+}
+
+section.visual .menu li a:hover .arrow:before,
+section.visual .menu li a:focus .arrow:before {
+    right: 0;
+    top: 0;
+}
+
+section.visual .img .mask {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.16);
+}
+
+section.visual .img .mask.a {
+    left: 0%;
+}
+
+section.visual .img .mask.b {
+    left: 25%;
+}
+
+section.visual .img .mask.c {
+    left: 50%;
+}
+
+section.visual .img .mask.d {
+    left: 75%;
+}
+
+@keyframes mask {
+    0% {
+        width: 25%;
+        background: #000;
+    }
+
+    50% {
+        width: 25%;
+        background: #000;
+    }
+
+    99% {
+        background: #000;
+    }
+}
+
+section.visual .slick-active .img .mask.a {
+    animation-name: mask;
+    animation-duration: 1s;
+}
+
+section.visual .slick-active .img .mask.b {
+    animation-name: mask;
+    animation-duration: 1.4s;
+}
+
+section.visual .slick-active .img .mask.c {
+    animation-name: mask;
+    animation-duration: 1.8s;
+}
+
+section.visual .slick-active .img .mask.d {
+    animation-name: mask;
+    animation-duration: 2.2s;
+}
+
+@keyframes slid-up {
+    0% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+}
+
+section.visual .slick-active .title h2 {
+    animation-name: slid-up;
+    animation-duration: 2.3s;
+}
+
+section.visual .slick-active .title p {
+    animation-name: slid-up;
+    animation-duration: 3s;
+}
+
+section.visual .menu {
+    animation-name: slid-up;
+    animation-duration: 2.8s;
+}
+
+section.visual .slick-active .imgBox img {
+    transform: scale(1);
+    animation-name: scaleani;
+    animation-duration: 5.2s;
+}
+
+@keyframes scaleani {
+    0% {
+        transform: scale(1.3);
+    }
+
+    30% {
+        transform: scale(1.3);
+    }
+}
+
+/* visual - slick-dots */
+.slick-dots {
+    position: absolute;
+    right: 4.5%;
+    bottom: 30px;
+}
+
+.slick-dots li button {
+    text-indent: -9999px;
+    width: 12px;
+    height: 12px;
+    border: none;
+    background-color: #ccc;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #39312b;
+}
+
+/*section.about*/
+section.about {
+    width: 95%;
+    margin: 40px auto;
+    text-align: center;
+    position: relative;
+}
+
+section.about img {
+    width: 100%;
+}
+
+section.about .inner {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+section.about .inner h2 {
+    font-size: 30px;
+    color: #fff;
+    font-weight: normal;
+}
+
+section.about .inner .line {
+    width: 35%;
+    margin: 80px auto 30px;
+    position: relative;
+}
+
+section.about .inner .line span {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+section.about .inner .line li {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+}
+
+section.about .inner .line li.a {
+    left: 0;
+    top: -2px;
+}
+
+section.about .inner .line li.b {
+    left: 50%;
+    transform: translateX(-50%);
+    top: -2px;
+}
+
+section.about .inner .line li.c {
+    right: 0;
+    top: -2px;
+}
+
+section.about .inner .line li:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.70);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -3px;
+    margin-left: -3px;
+    animation: dot 1.5s infinite;
+}
+
+
+@keyframes dot {
+    100% {
+        opacity: 1;
+        transform: scale(3.5);
+        opacity: 0;
+    }
+}
+
+section.about .inner ul {
+    width: 60%;
+    margin: 0 auto;
+}
+
+section.about .inner ul li {
+    color: #c5c5c5;
+    float: left;
+    width: 33.3333%;
+    font-size: 17px;
+    font-weight: 100;
+}
+
+section.about .inner ul li h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    color: #fff;
+}
+
+/*animation*/
+@keyframes opacity-ani {
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 0;
+    }
+}
+
+@keyframes slid-up2 {
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+}
+
+section.about .inner.motion h2 {
+    animation-name: slid-up;
+    animation-duration: 0.8s;
+}
+
+section.about .inner.motion .line span {
+    animation-name: opacity-ani;
+    animation-duration: 0.8s;
+}
+
+section.about .inner.motion .line li.a {
+    animation-name: opacity-ani;
+    animation-duration: 1.2s;
+}
+
+section.about .inner.motion .line li.b {
+    animation-name: opacity-ani;
+    animation-duration: 1.6s;
+}
+
+section.about .inner.motion .line li.c {
+    animation-name: opacity-ani;
+    animation-duration: 2s;
+}
+
+section.about .inner.motion ul li {
+    animation-name: slid-up2;
+    animation-duration: 2.4s;
+}
+
+section.about .inner.motion ul li:nth-child(2) {
+    animation-name: slid-up2;
+    animation-duration: 2.8s;
+}
+
+section.about .inner.motion ul li:nth-child(3) {
+    animation-name: slid-up2;
+    animation-duration: 3.2s;
+}
+
+
+/* gallery */
+section.gallery {
+    width: 95%;
+    margin: 40px auto;
+    padding: 100px 0;
+    box-sizing: border-box;
+    height: 1020px;
+    background: url(../img/con2_bg.jpg)no-repeat center/cover;
+    position: relative;
+}
+
+section.gallery .txtImg {
+    position: absolute;
+    left: 0;
+    top: 20%;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+section.gallery .txtImg.motion {
+    animation-name: widthAni;
+    animation-duration: 2.5s;
+}
+
+@keyframes widthAni {
+    0% {
+        width: 0%;
+    }
+
+    40% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%
+    }
+}
+
+section.gallery .title {
+    position: absolute;
+    left: 8%;
+    top: 35%;
+}
+
+section.gallery .title h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+section.gallery .title p {
+    font-size: 19px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+section.gallery .title a {
+    font-size: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+section.gallery .title a:before {
+    content: '';
+    width: 100%;
+    height: 15px;
+    background-color: rgba(2, 6, 66, 0.39);
+    position: absolute;
+    bottom: 0;
+    transition: all 0.3s;
+}
+
+section.gallery .title a:hover:before,
+section.gallery .title a:focus:before {
+    width: 0%;
+}
+
+section.gallery .banner li {
+    position: absolute;
+    box-shadow: 5px 6px 15px rgba(3, 3, 3, 0.4);
+    width: 15%;
+}
+
+section.gallery .banner li img {
+    width: 100%;
+}
+
+section.gallery .banner li:nth-child(1).motion {
+    left: 45%;
+    top: 15%;
+    animation-name: slid-up;
+    animation-duration: 1.2s;
+}
+
+section.gallery .banner li:nth-child(2).motion {
+    left: 37%;
+    top: 50%;
+    animation-name: slid-up;
+    animation-duration: 1.8s;
+}
+
+section.gallery .banner li:nth-child(3).motion {
+    left: 55%;
+    top: 62%;
+    animation-name: slid-up;
+    animation-duration: 2.2s;
+}
+
+section.gallery .banner li:nth-child(4).motion {
+    right: 2%;
+    width: 32%;
+    max-width: 580px;
+    animation-name: slid-up;
+    animation-duration: 1.5s;
+}
+
+/* residential */
+section.residential {
+    width: 95%;
+    margin: 40px auto 0;
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+}
+
+section.residential:before {
+    content: '';
+    width: 100%;
+    height: 45%;
+    background: #eee;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+section.residential .title h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+section.residential .title p {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 50px;
+}
+
+section.residential ul {
+    overflow: hidden;
+    padding-top: 50px;
+}
+
+section.residential ul li {
+    float: left;
+    width: 25%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+section.residential ul li:nth-child(1),
+section.residential ul li:nth-child(3) {
+    margin-top: -50px;
+}
+
+section.residential ul li a {
+    display: block;
+}
+
+section.residential ul li a .img {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    position: relative;
+    transition: all 0.2s;
+}
+
+section.residential ul li a .img img {
+    width: 100%;
+}
+
+section.residential ul li a .img:after {
+    content: 'VIEW';
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 35, 28, 0.8);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 22px;
+    color: #d4d4d4;
+    padding-top: 50%;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+section.residential ul li a:hover .img,
+section.residential ul li a:focus .img {
+    transform: translate(-8px, -8px);
+    box-shadow: 15px 18px 10px rgba(0, 0, 0, 0.35);
+}
+
+section.residential ul li a:hover .img:after,
+section.residential ul li a:focus .img:after {
+    opacity: 1;
+}
+
+section.residential ul li a h3 {
+    font-size: 22px;
+    margin: 40px 0 15px;
+}
+
+section.residential ul li a h3 span {
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+    color: #888;
+}
+
+section.residential ul li a p {
+    font-size: 17px;
+}
+
+/*animation*/
+section.residential.motion ul li {
+    animation-name: slid-up;
+    animation-duration: 1s;
+}
+
+section.residential.motion ul li:nth-child(2) {
+    animation-duration: 1.4s;
+}
+
+section.residential.motion ul li:nth-child(3) {
+    animation-duration: 1.7s;
+}
+
+section.residential.motion ul li:nth-child(4) {
+    animation-duration: 2s;
+}
+
+/*footer*/
+footer {
+    padding: 80px 0 0;
+    text-align: center;
+}
+
+footer .sns li {
+    display: inline-block;
+    margin: 0 20px;
+    
+}
+
+footer .footerLogo {
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: -6px;
+    color: #00578A;
+    margin: 40px 0 20px;
+}
+
+footer ul li {
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+footer ul li .copyright {
+    font-size: 15px;
+    font-weight: 100;
+    color: #888;
+    display: block;
+    margin-top: 20px;
+}
+
+footer .box {
+    padding: 150px 0;
+    background: url(../img/bottom_bg1.jpg) no-repeat center/cover;
+    margin-top: 80px;
+}
+
+footer .box.motion h2 {
+    color: #fff;
+    font-size: 22px;
+    padding-top: 100px;
+    font-weight: normal;
+    animation-name: slid-up;
+    animation-duration: 1s;
+}
+
+/* mobile nav */
+header .open,
+header .close {
+    display: none;
+}
+
+br.mo {
+    display: none;
+}
+
+/* top */
+aside {
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+}
+
+aside > a {
+    background: #001141;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 8px 10px 10px 10px;
+    border-radius: 40px;
+}
+
+
+
+
+
